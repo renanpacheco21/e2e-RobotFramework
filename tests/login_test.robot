@@ -1,21 +1,23 @@
 *** Settings ***
 Library           SeleniumLibrary
-Suite Setup       Open Browser    https://www.google.com/    chrome
-# Suite Teardown    Close All Browsers
+Suite Setup       Open Browser    https://admin-demo.nopcommerce.com/    chrome
+Suite Teardown    Close All Browsers
 
 *** Variables ***
-${USERNAME}       usuario_teste
-${PASSWORD}       senha_teste
+${USERNAME}       admin@yourstore.com
+${PASSWORD}       admin
 
 *** Test Cases ***
 Validar Login Com Sucesso
-    Input Text    id:username    ${USERNAME}
-    Input Text    id:password    ${PASSWORD}
-    Click Button  id:login-button
-    Page Should Contain    Bem-vindo, ${USERNAME}
+    Clear Element Text    id:Email
+    Input Text            id:Email    ${USERNAME}
+    Clear Element Text    id:Password
+    Input Text            id:Password    ${PASSWORD}
+    Click Element         xpath://button[text()='Log in']
+    
 
 Validar Login Falho
-    Input Text    id:username    ${USERNAME}
-    Input Text    id:password    senha_errada
-    Click Button  id:login-button
-    Page Should Contain    Credenciais inválidas
+    Input Text    id:Email    ${USERNAME}
+    Input Text    id:Password    senha_errada
+    Click Element    xpath://button[text()='Log in']
+    Page Should Contain    Login was unsuccessful. Please correct the errors and try again. The credentials provided are incorrect
