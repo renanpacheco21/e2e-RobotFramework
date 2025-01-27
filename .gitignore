@@ -1,4 +1,6 @@
 /results
+/logs
 output.xml
 report.html
-selenium-screenshot*
+selenium-screenshot*    
+log.html
