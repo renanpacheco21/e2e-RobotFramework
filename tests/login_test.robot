@@ -17,7 +17,7 @@ Validar Login Com Sucesso
     
 
 Validar Login Falho
-    Input Text    id:Email    ${USERNAME}
-    Input Text    id:Password    senha_errada
-    Click Element    xpath://button[text()='Log in']
+    Input Text             id:Email    ${USERNAME}
+    Input Text             id:Password    senha_errada
+    Click Element          xpath://button[text()='Log in']
     Page Should Contain    Login was unsuccessful. Please correct the errors and try again. The credentials provided are incorrect
