@@ -33,8 +33,8 @@ Automatizar cenários de teste para garantir a qualidade e a confiabilidade de u
 ```bash	
 e2e-RobotFramework
 ├── tests/                # Arquivos de teste (.robot)
-│   ├── web/              # Testes relacionados à interface web
-│   └── mobile/           # Testes para aplicações mobile (opcional)
+│   ├── e2e/              # Testes relacionados à interface web
+│   └── api/              # Testes relacionados à api
 ├── resources/            # Arquivos de recursos (keywords, variables, etc.)
 │   ├── keywords.robot    # Palavras-chave personalizadas
 │   ├── variables.robot   # Variáveis globais
